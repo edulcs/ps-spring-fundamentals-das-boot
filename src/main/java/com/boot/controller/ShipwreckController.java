@@ -9,27 +9,27 @@ import java.util.List;
 @RequestMapping("api/v1/")
 public class ShipwreckController {
 
-    @RequestMapping(value = "shipwreck", method = RequestMethod.GET)
+    @GetMapping(value = "shipwreck")
     public List<Shipwreck> list(){
         return ShipwreckStub.list();
     }
 
-    @RequestMapping(value = "shipwreck", method = RequestMethod.POST)
+    @PostMapping(value = "shipwreck")
     public Shipwreck create(@RequestBody Shipwreck shipwreck){
         return ShipwreckStub.create(shipwreck);
     }
 
-    @RequestMapping(value = "shipwreck/{id}", method = RequestMethod.GET)
+    @GetMapping(value = "shipwreck/{id}")
     public Shipwreck get(@PathVariable Long id){
         return ShipwreckStub.get(id);
     }
 
-    @RequestMapping(value = "shipwreck/{id}", method = RequestMethod.PUT)
+    @PutMapping(value = "shipwreck/{id}")
     public Shipwreck update(@PathVariable Long id, @RequestBody Shipwreck shipwreck){
         return ShipwreckStub.update(id, shipwreck);
     }
 
-    @RequestMapping(value = "shipwreck/{id}", method = RequestMethod.DELETE)
+    @DeleteMapping(value = "shipwreck/{id}")
     public Shipwreck delete(@PathVariable Long id){
         return ShipwreckStub.delete(id);
     }
